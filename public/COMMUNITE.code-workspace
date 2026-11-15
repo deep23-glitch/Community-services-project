@@ -1,0 +1,38 @@
+{
+	"folders": [
+		{
+			"path": "../../../../OneDrive/Desktop/DSA class"
+		},
+		{
+			"path": "../../../../OneDrive/Desktop/web dev-2"
+		},
+		{
+			"path": "../../../../OneDrive/Desktop/friday-ai-assistant"
+		},
+		{
+			"path": "../../../../OneDrive/Desktop/web dev 3"
+		},
+		{
+			"path": "../../../streakboard"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"python-envs.pythonProjects": [
+			{
+				"path": "my-app/src/components",
+				"envManager": "ms-python.python:venv",
+				"packageManager": "ms-python.python:pip",
+				"workspace": "web dev-2"
+			},
+			{
+				"path": "dsa assignment",
+				"envManager": "ms-python.python:venv",
+				"packageManager": "ms-python.python:pip",
+				"workspace": "DSA class"
+			}
+		]
+	}
+}
