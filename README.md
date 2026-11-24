@@ -125,7 +125,7 @@ Business rules (e.g. "cannot sell more than in stock") are enforced on the serve
 
 The app is a normal Node.js server, so it runs on any Node host. It saves data to a JSON file, so the host **must keep a persistent disk**; on hosts with a temporary disk, the shop data is lost whenever the app restarts.
 
-Render (included `render.yaml`):
+Render (included `render.yaml`, free plan, no card; data returns to `data/db.json` after each restart. For permanent data use a paid plan with a disk and set `DATA_DIR`):
 1. Push this folder to GitHub (do not commit `node_modules/` or `data/`).
 2. In Render choose New → Blueprint, pick the repo; it reads `render.yaml`.
 3. Open the URL Render gives you (`https://shopledger-xxxx.onrender.com`).

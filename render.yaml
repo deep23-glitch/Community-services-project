@@ -2,16 +2,10 @@ services:
   - type: web
     name: shopledger
     runtime: node
-    plan: starter            # a persistent disk needs a paid plan on Render
+    plan: free               # no card needed. NOTE: free plan has no disk, so data resets to data/db.json on every restart
     buildCommand: npm install
     startCommand: npm start
     healthCheckPath: /
     envVars:
       - key: NODE_VERSION
         value: 20
-      - key: DATA_DIR
-        value: /var/data
-    disk:
-      name: shopledger-data
-      mountPath: /var/data
-      sizeGB: 1
