@@ -44,7 +44,7 @@ export function makeSeed(shop = { name: 'Green Corner Store', owner: 'Deep Saha'
   const startD = Math.round((t0 - new Date(n0.getFullYear(), n0.getMonth() - 2, 1).getTime()) / DAY);
   const sales = [];
   for (let d = startD; d >= 0; d--) {
-    let n = d === 0 ? 3 + ri(0, 3) : 7 + ri(0, 4);
+    let n = d === 0 ? 8 + ri(0, 3) : 7 + ri(0, 4);
     const dow = new Date(t0 - d * DAY).getDay(); if (dow === 0 || dow === 6) n += 2;
     for (let k = 0; k < n; k++) {
       const ts = d === 0 ? t0 + R() * Math.max(now - t0, 60000) : t0 - d * DAY + (8 + R() * 13) * HOUR;
@@ -64,7 +64,7 @@ export function makeSeed(shop = { name: 'Green Corner Store', owner: 'Deep Saha'
   const moves = []; let mv = 0, pu = 100;
   for (let dd = startD - 1; dd >= 2; dd -= 4) {
     for (let q = 0; q < 2; q++) {
-      const pp = P[ri(0, P.length - 1)], qty = ri(30, 80); pu++; mv++;
+      const pp = P[ri(0, P.length - 1)], qty = ri(15, 40); pu++; mv++;
       moves.push({ id: 'm' + mv, ts: t0 - (dd - q) * DAY + 10 * HOUR, pid: pp.id, name: pp.name, type: 'in', qty, cost: qty * pp.cost, ref: 'PU-' + pad(pu), by: owner, note: '' });
     }
   }

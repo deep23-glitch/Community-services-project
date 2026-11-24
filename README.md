@@ -120,3 +120,14 @@ Business rules (e.g. "cannot sell more than in stock") are enforced on the serve
 - Replace `data/db.json` with SQLite or MongoDB (only `src/db.js` and the routes change).
 - Add login (e.g. `express-session`) so each shop owner has their own account.
 - Add barcode scanning, GST invoices, or a printable receipt page.
+
+## Deploying online
+
+The app is a normal Node.js server, so it runs on any Node host. It saves data to a JSON file, so the host **must keep a persistent disk**; on hosts with a temporary disk, the shop data is lost whenever the app restarts.
+
+Render (included `render.yaml`):
+1. Push this folder to GitHub (do not commit `node_modules/` or `data/`).
+2. In Render choose New → Blueprint, pick the repo; it reads `render.yaml`.
+3. Open the URL Render gives you (`https://shopledger-xxxx.onrender.com`).
+
+Any other host: set start command `npm start`, and set the environment variable `DATA_DIR` to a folder on the persistent disk. The port comes from `PORT` automatically.

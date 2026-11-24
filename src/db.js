@@ -6,7 +6,9 @@ import { fileURLToPath } from 'node:url';
 import { makeSeed } from './seed.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const FILE = path.join(__dirname, '..', 'data', 'db.json');
+// DATA_DIR lets a host point storage at a persistent disk (e.g. /var/data); default is ./data
+const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, '..', 'data');
+const FILE = path.join(DATA_DIR, 'db.json');
 let state = null;
 
 function read() {
